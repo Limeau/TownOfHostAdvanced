@@ -84,15 +84,6 @@ namespace TownOfHost
         }
     }
     [HarmonyPatch(typeof(EOSManager), nameof(EOSManager.IsAllowedOnline))]
-    class RunLoginPatch
-    {
-        public static void Prefix(ref bool canOnline)
-        {
-#if DEBUG
-            if (CultureInfo.CurrentCulture.Name != "ja-JP") canOnline = false;
-#endif
-        }
-    }
     [HarmonyPatch(typeof(BanMenu), nameof(BanMenu.SetVisible))]
     class BanMenuSetVisiblePatch
     {
