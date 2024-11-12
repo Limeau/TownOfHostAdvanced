@@ -148,7 +148,7 @@ namespace TownOfHost
                 logoTransform.parent = rightpanel;
                 logoTransform.localPosition = new(0f, 0.15f, 1f);
                 logoTransform.localScale *= 1.2f;
-                TohLogo.sprite = Utils.LoadSprite("TownOfHost.Resources.TownOfHost-Logo.png", 300f);
+                TohLogo.sprite = Utils.LoadSprite("TownOfHost.Resources.TownOfHostAdvanced-Logo.png", 300f);
             }
         }
         [HarmonyPatch(typeof(ModManager), nameof(ModManager.LateUpdate))]

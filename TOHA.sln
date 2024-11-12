@@ -3,5 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{0e3d5784-2ce5-4b3e-ad4e-256ad1d31b07}") = "TOHA", "TownOfHost.csproj", "{a93a693c-ad4c-4e0a-b500-a44c7527de02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TownOfHost", "TownOfHost.csproj", "{A93A693C-AD4C-4E0A-B500-A44C7527DE02}"
 EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A93A693C-AD4C-4E0A-B500-A44C7527DE02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A93A693C-AD4C-4E0A-B500-A44C7527DE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A93A693C-AD4C-4E0A-B500-A44C7527DE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A93A693C-AD4C-4E0A-B500-A44C7527DE02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

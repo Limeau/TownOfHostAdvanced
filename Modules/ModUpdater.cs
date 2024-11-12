@@ -34,8 +34,6 @@ namespace TownOfHost
             {
                 CheckRelease(Main.BetaBuildURL.Value != "").GetAwaiter().GetResult();
             }
-            MainMenuManagerPatch.UpdateButton.Button.gameObject.SetActive(hasUpdate);
-            MainMenuManagerPatch.UpdateButton.Button.transform.Find("FontPlacer/Text_TMP").GetComponent<TMPro.TMP_Text>().SetText($"{GetString("updateButton")}\n{latestTitle}");
         }
         public static async Task<bool> CheckRelease(bool beta = false)
         {
