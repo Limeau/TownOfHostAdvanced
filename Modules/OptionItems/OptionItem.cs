@@ -19,6 +19,8 @@ namespace TownOfHost
         private static List<OptionItem> _crewmateRoleOptions = new(512);
         public static IReadOnlyList<OptionItem> NeutralRoleOptions => _neutralRoleOptions;
         private static List<OptionItem> _neutralRoleOptions = new(512);
+        public static IReadOnlyList<OptionItem> CovenRoleOptions => _covenRoleOptions;
+        private static List<OptionItem> _covenRoleOptions = new(512);
         public static IReadOnlyList<OptionItem> AddOnOptions => _addOnOptions;
         private static List<OptionItem> _addOnOptions = new(512);
         public static IReadOnlyDictionary<int, OptionItem> FastOptions => _fastOptions;
@@ -121,6 +123,7 @@ namespace TownOfHost
                     case TabGroup.ImpostorRoles: _impostorRoleOptions.Add(this); break;
                     case TabGroup.CrewmateRoles: _crewmateRoleOptions.Add(this); break;
                     case TabGroup.NeutralRoles: _neutralRoleOptions.Add(this); break;
+                    case TabGroup.CovenRoles: _covenRoleOptions.Add(this); break;
                     case TabGroup.Addons: _addOnOptions.Add(this); break;
                     default: Logger.Warn($"Encountered unknown option category \"{tab}\" (ID: {id}, Name: {name})", nameof(OptionItem)); break;
                 }
@@ -299,7 +302,8 @@ namespace TownOfHost
         ImpostorRoles,
         CrewmateRoles,
         NeutralRoles,
-        Addons
+        Addons,
+        CovenRoles
     }
     public enum OptionFormat
     {

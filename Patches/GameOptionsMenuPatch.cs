@@ -19,6 +19,8 @@ namespace TownOfHost
         public static CategoryHeaderMasked ImpostorRoleCategoryHeader { get; private set; }
         public static CategoryHeaderMasked CrewmateRoleCategoryHeader { get; private set; }
         public static CategoryHeaderMasked NeutralRoleCategoryHeader { get; private set; }
+
+        public static CategoryHeaderMasked CovenRoleCategoryHeader { get; private set; }
         public static CategoryHeaderMasked AddOnCategoryHeader { get; private set; }
 
         [HarmonyPatch(nameof(GameSettingMenu.Start)), HarmonyPostfix]
@@ -63,6 +65,7 @@ namespace TownOfHost
             ImpostorRoleCategoryHeader = CreateCategoryHeader(__instance, tohSettingsTab, "TabGroup.ImpostorRoles");
             CrewmateRoleCategoryHeader = CreateCategoryHeader(__instance, tohSettingsTab, "TabGroup.CrewmateRoles");
             NeutralRoleCategoryHeader = CreateCategoryHeader(__instance, tohSettingsTab, "TabGroup.NeutralRoles");
+            CovenRoleCategoryHeader = CreateCategoryHeader(__instance, tohSettingsTab, "TabGroup.CovenRoles");
             AddOnCategoryHeader = CreateCategoryHeader(__instance, tohSettingsTab, "TabGroup.Addons");
 
             // 各設定スイッチを作成
@@ -105,10 +108,11 @@ namespace TownOfHost
             // 各カテゴリまでスクロールするボタンを作成
             var jumpButtonY = -0.6f;
             var jumpToMainButton = CreateJumpToCategoryButton(__instance, tohSettingsTab, "TownOfHost.Resources.TabIcon_MainSettings.png", ref jumpButtonY, MainCategoryHeader);
-            var jumpToImpButton = CreateJumpToCategoryButton(__instance, tohSettingsTab, "TownOfHost.Resources.TabIcon_ImpostorRoles.png", ref jumpButtonY, ImpostorRoleCategoryHeader);
-            var jumpToCrewButton = CreateJumpToCategoryButton(__instance, tohSettingsTab, "TownOfHost.Resources.TabIcon_CrewmateRoles.png", ref jumpButtonY, CrewmateRoleCategoryHeader);
-            var jumpToNeutralButton = CreateJumpToCategoryButton(__instance, tohSettingsTab, "TownOfHost.Resources.TabIcon_NeutralRoles.png", ref jumpButtonY, NeutralRoleCategoryHeader);
-            var jumpToAddOnButton = CreateJumpToCategoryButton(__instance, tohSettingsTab, "TownOfHost.Resources.TabIcon_Addons.png", ref jumpButtonY, AddOnCategoryHeader);
+            var jumpToImpButton = CreateJumpToCategoryButton(__instance, tohSettingsTab, "TownOfHost.Resources.red.png", ref jumpButtonY, ImpostorRoleCategoryHeader);
+            var jumpToCrewButton = CreateJumpToCategoryButton(__instance, tohSettingsTab, "TownOfHost.Resources.cyan.png", ref jumpButtonY, CrewmateRoleCategoryHeader);
+            var jumpToNeutralButton = CreateJumpToCategoryButton(__instance, tohSettingsTab, "TownOfHost.Resources.gray.png", ref jumpButtonY, NeutralRoleCategoryHeader);
+            var jumpToCovenButton = CreateJumpToCategoryButton(__instance, tohSettingsTab, "TownOfHost.Resources.purple.png", ref jumpButtonY, CovenRoleCategoryHeader);
+            var jumpToAddOnButton = CreateJumpToCategoryButton(__instance, tohSettingsTab, "TownOfHost.Resources.yellow.png", ref jumpButtonY, AddOnCategoryHeader);
         }
         private static MapSelectButton CreateJumpToCategoryButton(GameSettingMenu __instance, GameOptionsMenu tohTab, string resourcePath, ref float localY, CategoryHeaderMasked jumpTo)
         {
@@ -232,6 +236,11 @@ namespace TownOfHost
             }
             UpdateCategoryHeader(GameSettingMenuPatch.NeutralRoleCategoryHeader, ref offset);
             foreach (var option in OptionItem.NeutralRoleOptions)
+            {
+                UpdateOption(ref isOdd, option, ref offset);
+            }
+            UpdateCategoryHeader(GameSettingMenuPatch.CovenRoleCategoryHeader, ref offset);
+            foreach (var option in OptionItem.CovenRoleOptions)
             {
                 UpdateOption(ref isOdd, option, ref offset);
             }

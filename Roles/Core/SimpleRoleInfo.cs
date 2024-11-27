@@ -69,6 +69,7 @@ public class SimpleRoleInfo
             colorCode = customRoleType switch
             {
                 CustomRoleTypes.Impostor or CustomRoleTypes.Madmate => "#ff1919",
+                CustomRoleTypes.Coven => "#7c2bba",
                 CustomRoleTypes.Crewmate => "#8cffff",
                 _ => "#ffffff"
             };
@@ -83,6 +84,7 @@ public class SimpleRoleInfo
                 CustomRoleTypes.Madmate => TabGroup.ImpostorRoles,
                 CustomRoleTypes.Crewmate => TabGroup.CrewmateRoles,
                 CustomRoleTypes.Neutral => TabGroup.NeutralRoles,
+                CustomRoleTypes.Coven => TabGroup.CovenRoles,
                 _ => tab
             };
         Tab = tab;

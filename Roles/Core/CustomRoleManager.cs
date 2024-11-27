@@ -419,6 +419,8 @@ public enum CustomRoles
     Terrorist,
     Executioner,
     Jackal,
+    //Coven
+    CovenLeader,
     //HideAndSeek
     HASFox,
     HASTroll,
@@ -436,6 +438,7 @@ public enum CustomRoleTypes
     Crewmate,
     Impostor,
     Neutral,
+    Coven,
     Madmate
 }
 public enum HasTask
